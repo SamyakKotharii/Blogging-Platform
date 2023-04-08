@@ -1,0 +1,39 @@
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+const Explore = () => {
+  const [blogs, setBlogs] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch("http://localhost:4000/blog");
+      const data = await response.json();
+      // Get any 3 blogs randomly
+      const randomBlogs = [];
+      while (randomBlogs.length < 3) {
+        const randomIndex = Math.floor(Math.random() * data.length);
+        randomBlogs.push(data[randomIndex]);
+      }
+      setBlogs(randomBlogs);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+  return (
+    <div className="explore--card">
+        {blogs.map((blog) => (
+            <div className="cards">
+              <Link className="link--explore" to = {`/blog/${blog._id}`}>
+              <img className="explore--img" src={blog.url} alt="Featured Post" />
+              <p className="title-explore">{blog.title}</p>
+              </Link>
+            </div>
+        ))}
+    </div>
+  );
+};
+
+export default Explore;
