@@ -1,5 +1,6 @@
 import React from "react";
 import {FaFacebook,FaTwitter,FaGooglePlusG,FaYoutube,FaLinkedin} from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 export default function Footer() {
   return (
     <div className="footer--container">
@@ -18,11 +19,16 @@ export default function Footer() {
           <a href="https://darkhorsestocks.in/About%20us.php">Subscription</a>
         </div>
         <div className="footcol--3">
-          <a href="https://darkhorsestocks.in/About%20us.php">Privacy Policy</a>
-          <a href="https://darkhorsestocks.in/About%20us.php">Terms and Condition</a>
+          <NavLink to="/privacy">Privacy Policy</NavLink>
+          <NavLink to="/terms">Terms and Condition</NavLink>
+          <NavLink to="/faq">FAQ</NavLink>
+          <NavLink to="/disclaimer">Disclaimer</NavLink>
+          <NavLink to="/refund">Refund Policy</NavLink>
+          {/* <a href="https://darkhorsestocks.in/About%20us.php">Privacy Policy</a> */}
+          {/* <a href="https://darkhorsestocks.in/About%20us.php">Terms and Condition</a>
           <a href="https://darkhorsestocks.in/About%20us.php">FAQ</a>
           <a href="https://darkhorsestocks.in/About%20us.php">Disclaimer</a>
-          <a href="https://darkhorsestocks.in/About%20us.php">Refund Policy</a>
+          <a href="https://darkhorsestocks.in/About%20us.php">Refund Policy</a> */}
         </div>
         <div className="footcol--4">
           <h3>Contact us</h3>

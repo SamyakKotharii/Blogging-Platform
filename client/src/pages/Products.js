@@ -28,9 +28,87 @@ export default function Products() {
             reports generated are provided to the subscribers to carry their
             Individual analysis.
           </p>
-          <a href="https://mf.darkhorsestocks.in/sign-in" className="btn btn-primary">
-                  Go To Fundalysis
-                </a>
+          <a
+            href="https://mf.darkhorsestocks.in/sign-in"
+            className="btn btn-primary"
+          >
+            Go To Fundalysis
+          </a>
+        </div>
+      </div>
+      <div className="container--box">
+        <div className="item--col--1">
+          <div className="item--1">
+            <h3>Monthly Scheme Report</h3>
+          </div>
+          <div className="item--1">
+            <h3>Sectorial Analysis</h3>
+          </div>
+        </div>
+        <div className="item--mid ">
+          <h3>Economic Analysis</h3>
+        </div>
+        <div className="item--col--2">
+          <div className="item--1">
+            <h3>Company Analysis</h3>
+          </div>
+          <div className="item--1">
+            <h3>Fund Manager Analysis</h3>
+          </div>
+        </div>
+      </div>
+      <hr></hr>
+      <div className="container--funda">
+        <div>
+          <img
+            className="image--dashboard"
+            src="https://darkhorsestocks.in/img/db.png"
+            alt=""
+          />
+        </div>
+        <div className="text--funda">
+          <p className="hashtag--funda">#darkhorsestocks</p>
+          <h1>Dashboard</h1>
+          <p className="products--desc">
+            Dashboard is unique analytical tool developed only for
+            darkhorsestocks selected users which allows them to track all the
+            Darkhorsestocks ideas on a real time basis . This help them to take
+            quick and informed decisions about any stock movements in the market
+            relating specifically to darkhorsestock ideas. Data is sourced from
+            all the stocks that are listed on NSE . For some of the stocks which
+            are listed only on BSE their data is sourced from BSE.
+          </p>
+          <a
+            href="https://mf.darkhorsestocks.in/sign-in"
+            className="btn btn-primary"
+          >
+            Go To Dashboard
+          </a>
+        </div>
+      </div>
+      <div className="container--box">
+        <div className="item--col--1">
+          <div className="item--2">
+            <h4>List of all the stocks suggested in past 2 years along  with its recommended price</h4>
+          </div>
+          <div className="item--2">
+            <h4>Daily Top 5 gainers and Losers</h4>
+          </div>
+          <div className="item--2">
+            <h4>Pie Chart showing total number of stocks suggested</h4>
+          </div>
+        </div>
+        
+        <div className="item--col--2">
+          <div className="item--2">
+            <h4>Bar Chart showing stocks giving returns in range of 30% to above 50%.</h4>
+          </div>
+          <div className="item--2">
+            <h4>Pie Chart showing total number of stocks suggested</h4>
+          </div>
+          <div className="item--2 ">
+          <h4>All time top 5 gainers and losers.</h4>
+        </div>
         </div>
       </div>
       <Footer />
