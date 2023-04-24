@@ -1,4 +1,4 @@
-import React, {  useContext } from "react";
+import React, { useContext } from "react";
 import ImageSlider from "../components/ImageSlider";
 import Img from "../components/sliderData";
 import Overlay from "../components/Overlay";
@@ -12,35 +12,33 @@ import { Outlet } from "react-router-dom";
 import { UserContext } from "../App";
 import { useNavigate } from "react-router-dom";
 const Home = () => {
-  const {state,dispatch} =   useContext(UserContext);
+  const { state, dispatch } = useContext(UserContext);
   console.log(dispatch);
-  const navigate = useNavigate()
-  const HomeL=()=>{
-    if(state){
+  const navigate = useNavigate();
+  const HomeL = () => {
+    if (state) {
       return (
-      <div>
-      <ImageSlider slides={<Img />} />
-      <Overlay />
-      <section id="about-us-section">
-        <About />
-        <YoutubeEmbed embedId="w0ZC9VyMF6Q" />
-        <About2 />
-        <Vision />
-      </section>
-      <Footer />
-      <Outlet />
-    </div>
+        <div>
+          <ImageSlider slides={<Img />} />
+          <Overlay />
+          <section id="about-us-section">
+            <About />
+            <YoutubeEmbed embedId="w0ZC9VyMF6Q" />
+            <About2 />
+            <Vision />
+          </section>
+          <Footer />
+          <Outlet />
+        </div>
       );
-    }else{
-      return(
-        navigate("/login")
-      )
+    } else {
+      return navigate("/");
     }
-  }
-  return(
+  };
+  return (
     <>
-      <HomeL/>
+      <HomeL />
     </>
-  )
-}
+  );
+};
 export default Home;

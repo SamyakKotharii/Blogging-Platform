@@ -74,6 +74,9 @@ router.get('/blogs',authenticate,(req,res)=>{
 router.get('/home',authenticate,(req,res)=>{
   res.send(req.rootUser)
 })
+router.get('/Products',authenticate,(req,res)=>{
+  res.send(req.rootUser)
+})
 
 //Logout
 router.get('/logout',(req,res)=>{

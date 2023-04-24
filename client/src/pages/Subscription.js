@@ -15,7 +15,7 @@ export default function Subscription() {
           <div>
             <p className="subscribe--free">Free Plan</p>
             <a
-              href="https://transform.tools/html-to-jsx"
+              href="https://api.whatsapp.com/send/?phone=917874999975&text=Subscribe&type=phone_number&app_absent=0"
               className="subscribe--btn subscribe--btn-primary"
             >
               SUBSCRIBE
@@ -30,7 +30,7 @@ export default function Subscription() {
           <div>
             <p className="subscribe--free2">$XXXX</p>
             <a
-              href="https://transform.tools/html-to-jsx"
+              href="https://api.whatsapp.com/send/?phone=917874999975&text=Subscribe&type=phone_number&app_absent=0"
               className="subscribe--btn2 subscribe--btn-primary2"
             >
               SUBSCRIBE
