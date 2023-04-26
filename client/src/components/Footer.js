@@ -19,11 +19,11 @@ export default function Footer() {
           <a href="https://darkhorsestocks.in/About%20us.php">Subscription</a>
         </div>
         <div className="footcol--3">
-          <NavLink to="/privacy">Privacy Policy</NavLink>
-          <NavLink to="/terms">Terms and Condition</NavLink>
-          <NavLink to="/faq">FAQ</NavLink>
-          <NavLink to="/disclaimer">Disclaimer</NavLink>
-          <NavLink to="/refund">Refund Policy</NavLink>
+          <NavLink onClick={() => window.scrollTo(0, 0)} to="/privacy">Privacy Policy</NavLink>
+          <NavLink onClick={() => window.scrollTo(0, 0)} to="/terms">Terms and Condition</NavLink>
+          <NavLink onClick={() => window.scrollTo(0, 0)} to="/faq">FAQ</NavLink>
+          <NavLink onClick={() => window.scrollTo(0, 0)} to="/disclaimer">Disclaimer</NavLink>
+          <NavLink onClick={() => window.scrollTo(0, 0)} to="/refund">Refund Policy</NavLink>
           {/* <a href="https://darkhorsestocks.in/About%20us.php">Privacy Policy</a> */}
           {/* <a href="https://darkhorsestocks.in/About%20us.php">Terms and Condition</a>
           <a href="https://darkhorsestocks.in/About%20us.php">FAQ</a>

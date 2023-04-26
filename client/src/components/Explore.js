@@ -32,7 +32,7 @@ const Explore = () => {
     <div className="explore--card">
       {blogs.map((blog) => (
         <div className="cards" key={blog._id}>
-          <Link className="link--explore" to={`/blog/${blog._id}`}>
+          <Link className="link--explore" to={`/blog/${blog._id}`} onClick={() => window.scrollTo(0, 0)}>
             <img className="explore--img" src={blog.url} alt="Featured Post" />
             <p className="title-explore">{blog.title}</p>
           </Link>

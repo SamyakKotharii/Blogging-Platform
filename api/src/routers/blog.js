@@ -20,6 +20,16 @@ router.get("/blog", async (req, res) => {
     res.send(e);
   }
 });
+//Get categories
+router.get("/categories", async (req, res) => {
+  try {
+    const categories = await Blog.distinct("category");
+    res.send(categories);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Server Error");
+  }
+});
 //Get 3 Blogs by Dates
 router.get("/blog/latest", async (req, res) => {
   try {
@@ -74,11 +84,25 @@ router.patch("/blog/:id", async (req, res) => {
 router.get("/search/:key", async (req, resp) => {
   let result = await Blog.find({
     $or: [
-        { title: { $regex: req.params.key } },
-        { desc: { $regex: req.params.key } },
-        { content: { $regex: req.params.key } }
+      { title: { $regex: req.params.key } },
+      { desc: { $regex: req.params.key } },
+      { content: { $regex: req.params.key } },
     ],
   });
   resp.send(result);
 });
+//Filter Product
+router.post("/blog-filter", async (req, res) => {
+  try {
+    const { checked } = req.body;
+    let args = {};
+    if (checked.length > 0) args.category = { $in: checked };
+    const blogs = await Blog.find(args);
+    res.status(200).send({ message: "Fetched", blogs });
+  } catch (e) {
+    console.log(e);
+    res.status(400).send({ message: "Error in filtering" });
+  }
+});
+
 module.exports = router;
