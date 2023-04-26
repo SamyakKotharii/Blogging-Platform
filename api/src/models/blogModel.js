@@ -22,10 +22,15 @@ const blogSchema = new mongoose.Schema({
     // },
     content: [{
         type: String,
-        required:true
+        required:true,
+        unique:true
     }],
     date:{
         type:Date,
+        required:true
+    },
+    category:{
+        type:String,
         required:true
     }
 })

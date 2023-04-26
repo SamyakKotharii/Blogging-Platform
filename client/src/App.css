@@ -782,3 +782,7 @@ featured-post {
   text-align: center;
   color: red;
 }
+.category--menu{
+  border-right: 2px solid #000000;
+  width: 100%;
+}
