@@ -4,8 +4,8 @@ import darkhorse from "../images/darkhorse-logo.png";
 import { UserContext } from "../App";
 import { useContext } from "react";
 const Login = () => {
-  const {state,dispatch} =   useContext(UserContext)
-  console.log(state)
+  const { state, dispatch } = useContext(UserContext);
+  console.log(state);
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,19 +25,25 @@ const Login = () => {
     if (res.status === 400 || !data) {
       window.alert("Invalid Credential");
     } else {
-      dispatch({type:"USER",payload:true})
+      dispatch({ type: "USER", payload: true });
       window.alert("Login Successful");
       navigate("/home");
     }
   };
   return (
-    <>
-      <section className="signup">
+    <div className="signin">
+      <section>
         <div className="container-signin mt-5">
           <div className="signup-content">
-            <h2 className="form-title">Log In</h2>
-            <div className="signup-form">
+            {/* <h2 className="form-title">Log In</h2> */}
+            <div className="signin-form">
               <form method="POST" className="register-form" id="register-form">
+                <div className="signin-image">
+                  <figure>
+                    <img src={darkhorse} alt="Company-logo" />
+                  </figure>
+                </div>
+                <div className="input-form">
                 <div className="form-group">
                   <label htmlFor="email">
                     <i className="zmdi zmdi-email material-icons-name"></i>
@@ -67,31 +73,26 @@ const Login = () => {
                     placeholder="Password"
                   />
                 </div>
-
+                </div>
                 <div className="form-button">
                   <input
                     type="submit"
                     name="signup"
                     id="signup"
-                    className="form-submit"
+                    className="form-submit-login"
                     value="Log In"
                     onClick={loginUser}
                   />
                 </div>
-              </form>
-              <div className="signin-image">
-                <figure>
-                  <img src={darkhorse} alt="Company-logo" />
-                </figure>
                 <NavLink to="/signup" className="signin-image-link">
                   Create Account
                 </NavLink>
-              </div>
+              </form>
             </div>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

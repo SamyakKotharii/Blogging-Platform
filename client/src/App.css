@@ -607,7 +607,9 @@ featured-post {
 }
 .container-signup{
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  margin:100px 400px;
+  margin:90px 400px;
+  background-image: linear-gradient(to bottom right, white, rgb(216, 251, 255), rgb(0, 158, 247));
+ 
   height: 350px;
   width: 550px;
   background-color: white;
@@ -637,7 +639,8 @@ featured-post {
   border: none;
   padding-left: 15px;
   outline: none;
-  background-color: white;
+  /* background-color: white; */
+  background-color: transparent;
 }
 .form-submit{
   background-color: black;
@@ -645,7 +648,8 @@ featured-post {
   padding: 10px;
   border-radius: 5px;
   border: none;
-  margin-left: 10px;
+  margin-left: 70px;
+  margin-block: 15px;
 }
 .form-submit:hover{
   background-color: #00008B;
@@ -659,26 +663,64 @@ featured-post {
 }
 .signup-image-link{
   margin-left: 30px;
+  text-decoration: none;
+}
+ .signin{
+   background-image:url("../src/images/stocks4.jpg");
+   background-size: cover;
+   padding-block: 15px;
+ }
+ .signup{
+  background-image:url("../src/images/stocks4.jpg");
+  background-size: cover;
+  padding-block: 1px;
 }
 .container-signin{
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  margin:100px 400px;
-  height: 250px;
-  width: 550px;
-  background-color: white;
+  margin:50px 400px;
+  background-image: linear-gradient(to bottom right, white, rgb(216, 251, 255), skyblue);
+  margin-left:480px;
+  height: 400px;
+  width: 350px;
+  
+  /* background-color: white; */
   color: black;
   border-radius: 15px;
 }
-.signin-image{
-  margin-left: 50px;
-  margin-top: -50px;
+.input-form{
+  margin-right: 10px;
+  margin-block: 30px;
+}
+.signin-form{
+  padding: 5px;
+  /* padding-left: 25px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .signin-image>figure>img{
-  height: 130px;
-  width: 130px;
+  height: 80px;
+  width: 80px;
+  margin-left: 20px;
+  margin-top: 15px;
 }
 .signin-image-link{
-  margin-left: 50px;
+  margin-left: 55px;
+  text-decoration: none;
+}
+.form-submit-login{
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  height: 40px;
+  width: 80px;
+  margin-left: 65px;
+  margin-block: 15px;
+}
+.form-submit-login:hover{
+  background-color: #00008B;
 }
 .notfound-404{
   display: flex;
