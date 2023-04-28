@@ -1,5 +1,5 @@
 import React from "react";
-import {FaFacebook,FaTwitter,FaGooglePlusG,FaYoutube,FaLinkedin} from "react-icons/fa";
+import {FaFacebook,FaTwitter,FaTelegram,FaYoutube,FaLinkedin} from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 export default function Footer() {
   return (
@@ -14,9 +14,10 @@ export default function Footer() {
           </h4>
         </div>
         <div className="footcol--2">
-          <a href="https://darkhorsestocks.in/About%20us.php">Blogs</a>
-          <a href="https://darkhorsestocks.in/About%20us.php">Products</a>
-          <a href="https://darkhorsestocks.in/About%20us.php">Subscription</a>
+        <NavLink onClick={() => window.scrollTo(0, 0)} to="/blogs">Blogs</NavLink>
+        <NavLink onClick={() => window.scrollTo(0, 0)} to="/Products">Products</NavLink>
+        <NavLink onClick={() => window.scrollTo(0, 0)} to="/Subscription">Subscription</NavLink>
+          
         </div>
         <div className="footcol--3">
           <NavLink onClick={() => window.scrollTo(0, 0)} to="/privacy">Privacy Policy</NavLink>
@@ -35,27 +36,27 @@ export default function Footer() {
           <div className="social--div">
           <ul className="socials">
             <li>
-              <a href="https://darkhorsestocks.in/About%20us.php">
+              <a href="https://www.facebook.com/DARKHORSESTOCKS">
                 <i ><FaFacebook/></i>
               </a>
             </li>
             <li>
-              <a href="https://darkhorsestocks.in/About%20us.php">
+              <a href="https://twitter.com/DARKHORSESTOCKS">
                 <i><FaTwitter/></i>
               </a>
             </li>
             <li>
-              <a href="https://darkhorsestocks.in/About%20us.php">
-                <i><FaGooglePlusG/></i>
+              <a href="https://telegram.me/darkhorsestocks">
+              <i><FaTelegram/></i>
               </a>
             </li>
             <li>
-              <a href="https://darkhorsestocks.in/About%20us.php">
+              <a href="https://www.youtube.com/channel/UCKNoxoowoWYZEfKk8zIe8vQ/featured">
                 <i><FaYoutube/></i>
               </a>
             </li>
             <li>
-              <a href="https://darkhorsestocks.in/About%20us.php">
+              <a href="https://www.linkedin.com/company/darkhorsestocks">
                 <i><FaLinkedin/></i>
               </a>
             </li>

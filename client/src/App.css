@@ -7,7 +7,6 @@ body{
   display: flex;
   flex-direction: row;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  
   background-color: white;
 }
 .darkhorse--logo{
@@ -17,18 +16,33 @@ body{
   color: #00008B;
   margin-right: 150px;
 }
+.nav--list{
+  color: rgb(0, 0, 139,0.5);
+}
+.nav--list--home{
+  color: rgb(0, 0, 139,0.5);
+}
+.nav--list.active {
+  color: #00008B;
+  opacity: 100%;
+}
 .nav--items{
   display: flex;
   flex-direction: row;
   list-style: none;
-  margin-left: 180px;
+  margin-left: 200px;
+}
+.nav--items--logout{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin-left: 210px;
 }
 /* .active{
   color: #D6E5FA;
 } */
 .nav--list{
   margin: 0px 15px;
-  /* color: #000; */
 }
 .drop--down{
   font-family: 'Merriweather', serif;
@@ -238,9 +252,9 @@ body{
  .footer--container{
   background-color: #00008B;
  }
- .nav--list--op{
+ /* .nav--list--op{
   opacity: 50%;
- }
+ } */
  .address{
   margin-top: 0;
  }

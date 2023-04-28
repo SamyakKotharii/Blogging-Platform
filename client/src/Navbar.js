@@ -4,20 +4,21 @@ import { UserContext } from "./App";
 const Navbar = () => {
   const {state,dispatch} =   useContext(UserContext);
   console.log(dispatch);
-  const handleAboutUsClick = () => {
-    // Scroll down to the About Us section
-    const aboutUsSection = document.getElementById("about-us-section");
-    if (aboutUsSection) {
-      aboutUsSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // const handleAboutUsClick = () => {
+  //   // Scroll down to the About Us section
+  //   const aboutUsSection = document.getElementById("about-us-section");
+  //   if (aboutUsSection) {
+  //     aboutUsSection.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
   const RenderMenu=()=>{
     if(state){
       return(
         <>
         <li className="nav--list">
           <NavLink
-            className="nav--list "
+            activeClassName="active"
+            className="nav--list"
             to="/home"
             style={{ textDecoration: "none" }}
           >
@@ -26,7 +27,8 @@ const Navbar = () => {
         </li>
         <li className="nav--list">
           <NavLink
-            className="nav--list nav--list--op"
+          activeClassName="active"
+          className="nav--list"
             to="/blogs"
             style={{ textDecoration: "none" }}
           >
@@ -36,7 +38,8 @@ const Navbar = () => {
         <div className="nav--list drop--down">
           <button className="dropbtn">
             <NavLink
-              className="nav--list nav--list--op"
+              activeClassName="active"
+              className="nav--list"
               to="/Products"
               style={{ textDecoration: "none" }}
             >
@@ -52,15 +55,17 @@ const Navbar = () => {
         </div>
         <li className="nav--list">
           <NavLink
-            className="nav--list nav--list--op"
+            activeClassName="active"
+            className="nav--list"
             to="/Subscription"
             style={{ textDecoration: "none" }}
           >
             Subscription
           </NavLink>
         </li>
-        <li>
+        {/* <li>
         <NavLink
+            activeClassName="active"
             className="nav--list"
             to="/home"
             style={{ textDecoration: "none" }}
@@ -68,9 +73,10 @@ const Navbar = () => {
           >
             About Us
           </NavLink>
-        </li>
+        </li> */}
         <li className="nav--list">
         <NavLink
+            activeClassName="active"
             className="nav--list"
             to="/logout"
             style={{ textDecoration: "none" }}
@@ -87,7 +93,7 @@ const Navbar = () => {
         <>
         <li className="nav--list">
           <NavLink
-            className="nav--list "
+            className="nav--list--home"
             to="/"
             style={{ textDecoration: "none" }}
           >
@@ -162,7 +168,7 @@ const Navbar = () => {
     }
   }
   return (
-    <nav className="navbar" >
+    <nav className="navbar">
       <img
         className="darkhorse--logo"
         src={require("./images/darkhorse-logo.png")}
@@ -170,11 +176,11 @@ const Navbar = () => {
         width="40px"
       />
       <p className="company--name">DARKHORSESTOCKS</p>
-      <ul className="nav--items">
-        <RenderMenu/>
+      <ul className={state ? "nav--items" : "nav--items--logout"}>
+        <RenderMenu />
       </ul>
-      {/* <img src={require("../images/search.png")} alt="" width="25px"/> */}
     </nav>
   );
+  
 };
 export default Navbar;
