@@ -81,12 +81,22 @@ router.patch("/blog/:id", async (req, res) => {
   }
 });
 //Search
+// router.get("/search/:key", async (req, resp) => {
+//   let result = await Blog.find({
+//     $or: [
+//       { title: { $regex: req.params.key } },
+//       { desc: { $regex: req.params.key } },
+//       { content: { $regex: req.params.key } },
+//     ],
+//   });
+//   resp.send(result);
+// });
 router.get("/search/:key", async (req, resp) => {
   let result = await Blog.find({
     $or: [
-      { title: { $regex: req.params.key } },
-      { desc: { $regex: req.params.key } },
-      { content: { $regex: req.params.key } },
+      { title: { $regex: new RegExp(req.params.key, 'i') } },
+      { desc: { $regex: new RegExp(req.params.key, 'i') } },
+      { content: { $regex: new RegExp(req.params.key, 'i') } },
     ],
   });
   resp.send(result);

@@ -18,7 +18,8 @@ import Terms from './components/Terms';
 import Disclaimer from './components/Disclaimer';
 import Refund from './components/Refund';
 import FAQPage from './components/FAQ';
-import { Admin } from './pages/Admin';
+import  Admin  from './pages/Admin';
+import Adminblogs from './components/Adminblogs';
 export const UserContext = createContext();
 const Routing = ()=>{
   return(
@@ -27,6 +28,7 @@ const Routing = ()=>{
         <Route path="/" element={<MainHeader/>}>
           <Route index element={<Login/>}/>
           <Route path="/admin" element={<Admin/>}/>
+          <Route path="/admin/blogs" element={<Adminblogs/>}/>
           <Route path="/blogs" element={<Blogs/>}/>
           <Route path="/home" element={<Home/>}/>
           <Route path="/signup" element={<Signup/>}/>

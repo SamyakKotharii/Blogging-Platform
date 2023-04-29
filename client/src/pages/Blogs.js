@@ -32,7 +32,7 @@ export default function Blogs() {
 
   const getData = useCallback(() => {
     const apiUrl = searchKey
-      ? `http://localhost:4000/search/${searchKey}`
+      ? `http://localhost:4000/search/${searchKey.toLowerCase()}`
       : "http://localhost:4000/blog";
 
     const requestOptions = {

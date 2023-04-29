@@ -21,10 +21,17 @@ const Login = () => {
         password,
       }),
     });
-    const data = res.json();
+    const data = await res.json();
+    // console.log(data.adminname)
     if (res.status === 400 || !data) {
       window.alert("Invalid Credential");
+    } else if (data.adminname === "Samyak") {
+      localStorage.setItem("adminname", data.adminname);
+      dispatch({ type: "USER", payload: true });
+     
+      navigate("/admin");
     } else {
+      localStorage.setItem("adminname", data.adminname);
       dispatch({ type: "USER", payload: true });
       window.alert("Login Successful");
       navigate("/home");
@@ -44,35 +51,35 @@ const Login = () => {
                   </figure>
                 </div>
                 <div className="input-form">
-                <div className="form-group">
-                  <label htmlFor="email">
-                    <i className="zmdi zmdi-email material-icons-name"></i>
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    autoComplete="off"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Email ID"
-                  />
-                </div>
+                  <div className="form-group">
+                    <label htmlFor="email">
+                      <i className="zmdi zmdi-email material-icons-name"></i>
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      autoComplete="off"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Email ID"
+                    />
+                  </div>
 
-                <div className="form-group">
-                  <label htmlFor="password">
-                    <i className="zmdi zmdi-lock material-icons-name"></i>
-                  </label>
-                  <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    autoComplete="off"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Password"
-                  />
-                </div>
+                  <div className="form-group">
+                    <label htmlFor="password">
+                      <i className="zmdi zmdi-lock material-icons-name"></i>
+                    </label>
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      autoComplete="off"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Password"
+                    />
+                  </div>
                 </div>
                 <div className="form-button">
                   <input

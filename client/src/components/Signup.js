@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import darkhorse from "../images/darkhorse-logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
 const Signup = () => {
-  const history = useNavigate();
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -16,9 +16,37 @@ const Signup = () => {
     value = e.target.value;
     setUser({ ...user, [name]: value });
   };
+  // const PostData = async (e) => {
+  //   e.preventDefault();
+  //   const { name, email, phone, password, cpassword } = user;
+  //   const res = await fetch("/register", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       name,
+  //       email,
+  //       phone,
+  //       password,
+  //       cpassword,
+  //     }),
+  //   });
+  //   const data = await res.json();
+  //   if (data.status === 422 || !data) {
+  //     window.alert("Invalid Registraion");
+  //   } else {
+  //     window.alert("Registration Successful");
+  //     history.push("/");
+  //   }
+  // };
   const PostData = async (e) => {
     e.preventDefault();
     const { name, email, phone, password, cpassword } = user;
+    if (phone.length !== 10) {
+      window.alert("Please enter a valid phone number");
+      return;
+    }
     const res = await fetch("/register", {
       method: "POST",
       headers: {
@@ -34,12 +62,13 @@ const Signup = () => {
     });
     const data = await res.json();
     if (data.status === 422 || !data) {
-      window.alert("Invalid Registraion");
+      window.alert("Invalid Registration");
     } else {
       window.alert("Registration Successful");
-      history.push("/");
+      navigate("/");
     }
   };
+  
   return (
     <div className="signup">
       <section>

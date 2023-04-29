@@ -14,6 +14,8 @@ app.use(bodyParser.json());
 app.use(userRouter)
 const blogRouter = require("./routers/blog")
 app.use(blogRouter)
+const adminRouter = require("./routers/admin")
+app.use(adminRouter)
 app.listen(port, ()=>{
     console.log(`connection is setup at ${port}`);
 });

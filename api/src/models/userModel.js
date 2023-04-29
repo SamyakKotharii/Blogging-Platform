@@ -11,8 +11,16 @@ const userSchema = new mongoose.Schema({
         required:true
     },
     phone:{
-        type:Number,
-        required:true
+        phone: {
+            type: Number,
+            required: true,
+            validate: {
+                validator: function(v) {
+                    return /^\d{10}$/.test(v); // Checks if the phone number is exactly 10 digits
+                },
+                message: props => `${props.value} is not a valid phone number! Phone number must be exactly 10 digits.`
+            }
+        },
     },
     password:{
         type:String,

@@ -48,6 +48,7 @@ router.post("/signin", async (req, res) => {
       return res.status(400).json({ error: "Please fill the data" });
     }
     const userLogin = await User.findOne({ email: email });
+    
     if (userLogin) {
       const isMatch = await bcrypt.compare(password, userLogin.password);
       token = await userLogin.generateAuthToken();
@@ -96,6 +97,7 @@ router.get("/Subscription", authenticate, async (req, res) => {
 //Logout
 router.get('/logout',(req,res)=>{
   res.clearCookie('jwtoken',{path:"/"})
+  localStorage.removeItem('adminname');
   res.status(200).send("User Logged Out")
 })
 

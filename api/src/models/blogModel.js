@@ -17,9 +17,8 @@ const blogSchema = new mongoose.Schema({
     },
     content: [{
         type: String,
-        required:true,
-        unique:true
-    }],
+        required:true
+    },],
     date:{
         type:Date,
         required:true
