@@ -1,8 +1,9 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaHome, FaNewspaper, FaUsers, FaSignOutAlt } from "react-icons/fa";
+import {  FaPlusCircle, FaSignOutAlt, FaEdit } from "react-icons/fa";
 import { useContext } from "react";
 import { UserContext } from "../App";
+import darkhorse from "../images/darkhorse-logo.png";
 
 const Sidebar = () => {
   const { dispatch } = useContext(UserContext);
@@ -15,31 +16,40 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar">
-      <div className="sidebar-header">
-        <h3>Dashboard</h3>
+      <div className="admin-header">
+      <div className="admin-image">
+                    <img src={darkhorse} alt="Company-logo" />
+                </div>
+                <div className="sidebar-header">
+        <h3>Darkhorsestocks</h3>
       </div>
+      </div>
+      
       <ul className="sidebar-menu">
-        <li>
-          <Link to="/admin/blogs">
-            <FaHome /> Dashboard
-          </Link>
-        </li>
-        <li>
+        {/* <li className="admin-dash">Admin Dashboard</li> */}
+      <li className="button-admin">
           <Link to="/admin">
-            <FaNewspaper /> News
+            <FaPlusCircle /> Add Blog
           </Link>
         </li>
-        <li>
-          <Link to="/admin/users">
+        <li className="button-admin">
+          <Link to="/admin/blogs">
+            <FaEdit /> Update Blog
+          </Link>
+        </li>
+        
+        {/* <li className="button-admin">
+          <Link to="/admin/update">
             <FaUsers /> Users
           </Link>
-        </li>
-        <li>
-          <button className="btn-logout" onClick={handleLogout}>
+        </li> */}
+        {/* <li>
+          
+        </li> */}
+      </ul>
+      <button className="form-button btn-logout form-submit-login" onClick={handleLogout}>
             <FaSignOutAlt /> Logout
           </button>
-        </li>
-      </ul>
     </div>
   );
 };

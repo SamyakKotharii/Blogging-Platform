@@ -20,15 +20,17 @@ import Refund from './components/Refund';
 import FAQPage from './components/FAQ';
 import  Admin  from './pages/Admin';
 import Adminblogs from './components/Adminblogs';
+import UpdateBlog from './components/UpdateBlog';
 export const UserContext = createContext();
 const Routing = ()=>{
   return(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainHeader/>}>
-          <Route index element={<Login/>}/>
+          <Route index  element={<Login/>}/>
           <Route path="/admin" element={<Admin/>}/>
           <Route path="/admin/blogs" element={<Adminblogs/>}/>
+          <Route path="/admin/update/blog/:id" element={<UpdateBlog/>}/>
           <Route path="/blogs" element={<Blogs/>}/>
           <Route path="/home" element={<Home/>}/>
           <Route path="/signup" element={<Signup/>}/>
@@ -49,6 +51,7 @@ const Routing = ()=>{
 }
 const App = () => {
   const [state,dispatch] = useReducer(reducer,initialState)
+  
   return (
     <>
       <UserContext.Provider value={{state,dispatch}}>

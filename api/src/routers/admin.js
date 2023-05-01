@@ -39,5 +39,40 @@ router.get("/admin/blogs", async (req, res) => {
       res.status(500).send(e);
     }
   });
+  // router.patch("/admin/update/blog/:id", async (req, res) => {
+  //   try {
+  //     const _id = req.params.id;
+  //     const patchUpdate = await Blog.findByIdAndUpdate(_id, req.body, {
+  //       new: true,
+  //     });
+  //     res.send(patchUpdate);
+  //   } catch (e) {
+  //     res.status(404).send(e);
+  //   }
+  // });
+  router.put("/admin/update/blog/:id", async (req, res) => {
+    try {
+      const _id = req.params.id;
+      const updateBlog = await Blog.findByIdAndUpdate(_id, req.body, {
+        new: true,
+      });
+      res.send(updateBlog);
+    } catch (e) {
+      res.status(404).send(e);
+    }
+  });
   
+  router.get("/admin/blog/:id", async (req, res) => {
+    try {
+      const _id = req.params.id;
+      const blogData = await Blog.findById(_id);
+      if (!blogData) {
+        return res.status(404).send();
+      } else {
+        res.send(blogData);
+      }
+    } catch (e) {
+      res.send(e);
+    }
+  });
 module.exports = router;

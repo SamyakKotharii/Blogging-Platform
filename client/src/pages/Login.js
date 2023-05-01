@@ -28,7 +28,6 @@ const Login = () => {
     } else if (data.adminname === "Samyak") {
       localStorage.setItem("adminname", data.adminname);
       dispatch({ type: "USER", payload: true });
-     
       navigate("/admin");
     } else {
       localStorage.setItem("adminname", data.adminname);
