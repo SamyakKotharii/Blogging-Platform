@@ -5,7 +5,7 @@ import { UserContext } from "../App";
 import { useContext } from "react";
 const Login = () => {
   const { state, dispatch } = useContext(UserContext);
-  console.log(state);
+  // console.log(state);
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

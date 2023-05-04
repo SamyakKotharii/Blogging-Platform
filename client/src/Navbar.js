@@ -3,14 +3,7 @@ import { NavLink } from "react-router-dom";
 import { UserContext } from "./App";
 const Navbar = () => {
   const {state,dispatch} =   useContext(UserContext);
-  console.log(dispatch);
-  // const handleAboutUsClick = () => {
-  //   // Scroll down to the About Us section
-  //   const aboutUsSection = document.getElementById("about-us-section");
-  //   if (aboutUsSection) {
-  //     aboutUsSection.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // };
+
   const RenderMenu=()=>{
     if(state){
       return(
@@ -63,17 +56,7 @@ const Navbar = () => {
             Subscription
           </NavLink>
         </li>
-        {/* <li>
-        <NavLink
-            activeClassName="active"
-            className="nav--list"
-            to="/home"
-            style={{ textDecoration: "none" }}
-            onClick={handleAboutUsClick}
-          >
-            About Us
-          </NavLink>
-        </li> */}
+        
         <li className="nav--list">
         <NavLink
             activeClassName="active"

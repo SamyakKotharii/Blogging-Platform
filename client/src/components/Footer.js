@@ -25,11 +25,6 @@ export default function Footer() {
           <NavLink onClick={() => window.scrollTo(0, 0)} to="/faq">FAQ</NavLink>
           <NavLink onClick={() => window.scrollTo(0, 0)} to="/disclaimer">Disclaimer</NavLink>
           <NavLink onClick={() => window.scrollTo(0, 0)} to="/refund">Refund Policy</NavLink>
-          {/* <a href="https://darkhorsestocks.in/About%20us.php">Privacy Policy</a> */}
-          {/* <a href="https://darkhorsestocks.in/About%20us.php">Terms and Condition</a>
-          <a href="https://darkhorsestocks.in/About%20us.php">FAQ</a>
-          <a href="https://darkhorsestocks.in/About%20us.php">Disclaimer</a>
-          <a href="https://darkhorsestocks.in/About%20us.php">Refund Policy</a> */}
         </div>
         <div className="footcol--4">
           <h3>Contact us</h3>

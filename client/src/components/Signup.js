@@ -16,30 +16,6 @@ const Signup = () => {
     value = e.target.value;
     setUser({ ...user, [name]: value });
   };
-  // const PostData = async (e) => {
-  //   e.preventDefault();
-  //   const { name, email, phone, password, cpassword } = user;
-  //   const res = await fetch("/register", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       name,
-  //       email,
-  //       phone,
-  //       password,
-  //       cpassword,
-  //     }),
-  //   });
-  //   const data = await res.json();
-  //   if (data.status === 422 || !data) {
-  //     window.alert("Invalid Registraion");
-  //   } else {
-  //     window.alert("Registration Successful");
-  //     history.push("/");
-  //   }
-  // };
   const PostData = async (e) => {
     e.preventDefault();
     const { name, email, phone, password, cpassword } = user;

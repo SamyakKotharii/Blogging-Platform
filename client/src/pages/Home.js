@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import ImageSlider from "../components/ImageSlider";
-import Img from "../components/sliderData";
 import Overlay from "../components/Overlay";
 import About from "../components/About";
 import YoutubeEmbed from "../components/YoutubeEmbed";
@@ -19,7 +18,7 @@ const Home = () => {
     if (state) {
       return (
         <div>
-          <ImageSlider slides={<Img />} />
+          <ImageSlider/>
           <Overlay />
           <section id="about-us-section">
             <About />

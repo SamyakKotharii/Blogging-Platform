@@ -4,7 +4,7 @@ import { UserContext } from "../App";
 import { useContext } from "react";
 export const Logout = () => {
   const {state,dispatch} =   useContext(UserContext);
-  console.log(state)
+  // console.log(state)
     const navigate = useNavigate();
   useEffect(()=>{
     fetch('logout',{
