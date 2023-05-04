@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import darkhorse from "../images/darkhorse-logo.png";
+import {BASE_URL} from "./helper"
 import { UserContext } from "../App";
 import { useContext } from "react";
 const Login = () => {
@@ -11,7 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const loginUser = async (e) => {
     e.preventDefault();
-    const res = await fetch("/signin", {
+    const res = await fetch(`${BASE_URL}/signin`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",

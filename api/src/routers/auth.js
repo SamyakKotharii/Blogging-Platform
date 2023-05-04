@@ -6,6 +6,7 @@ require("../db/conn");
 const User = require("../models/userModel");
 const authenticate = require("../middleware/authenticate")
 const cookieParser = require("cookie-parser");
+const BASE_URL = process.env.BASE_URL
 router.use(cookieParser());
 let adminname = "";
 router.get("/user", async (req, res) => {
@@ -40,7 +41,7 @@ router.post("/register", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
-router.post("/signin", async (req, res) => {
+router.post(`${BASE_URL}/signin`, async (req, res) => {
   try {
     let token;
     const { email, password } = req.body;
