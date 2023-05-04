@@ -53,7 +53,7 @@ const UpdateBlog = () => {
       });
       const data = await response.json();
       setIsLoading(false);
-      // console.log(data);
+      console.log(data);
     } catch (error) {
       setIsLoading(false);
       setError(error.message);

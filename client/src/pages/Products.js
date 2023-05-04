@@ -5,7 +5,7 @@ import { UserContext } from "../App";
 
 export default function Products() {
   const { state, dispatch } = useContext(UserContext);
-  // console.log(dispatch);
+  console.log(dispatch);
   const Pro = ()=>{
     if(state){
       return(

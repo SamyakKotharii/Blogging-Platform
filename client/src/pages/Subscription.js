@@ -3,7 +3,7 @@ import {useContext } from "react";
 import { UserContext } from "../App";
 export default function Subscription() {
   const { state, dispatch } = useContext(UserContext);
-  // console.log(dispatch)
+  console.log(dispatch)
   const Subscribe = () => {
     if(state){
       return(<>
