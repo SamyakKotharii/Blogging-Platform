@@ -46,7 +46,11 @@ export default function Blogs() {
     fetch(apiUrl, requestOptions)
       .then((response) => response.json())
       .then((data) => {
-        setBlogs(data);
+        // Sort the blogs by date in descending order
+        const sortedBlogs = data.sort((a, b) => {
+          return new Date(b.date) - new Date(a.date);
+        });
+        setBlogs(sortedBlogs);
       })
       .catch((error) => {
         console.error(error);
@@ -57,12 +61,17 @@ export default function Blogs() {
       const { data } = await axios.post("https://darkhorsestocks.onrender.com/blog-filter", {
         checked,
       });
-      setBlogs(data?.blogs);
+      // Sort the filtered blogs by date in descending order
+      const sortedBlogs = data?.blogs.sort((a, b) => {
+        return new Date(b.date) - new Date(a.date);
+      });
+      setBlogs(sortedBlogs);
       setCurrentPage(1); // Update currentPage state to 1
     } catch (e) {
       console.log(e);
     }
   }, [checked]);
+  
   
   
 
