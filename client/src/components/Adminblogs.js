@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import {toast} from "react-toastify"
 const Adminblogs = () => {
   const [blogs, setBlogs] = useState([]);
 
@@ -21,9 +21,27 @@ const Adminblogs = () => {
       if (res.status === 200) {
         setBlogs(blogs.filter((blog) => blog._id !== id));
       } else {
-        console.log("Failed to delete the blog");
+        toast.success("Failed to Delete Blog", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
       }
-      alert("Blog Deleted Successfully");
+      toast.success("Blog Deleted Successfully!!", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     } catch (error) {
       console.log(error);
     }

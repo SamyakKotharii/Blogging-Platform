@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import darkhorse from "../images/darkhorse-logo.png";
-import {BASE_URL} from "./helper"
+import { toast } from "react-toastify";
+import bgimage from "../images/bgimage.png";
+import bgimager from "../images/bgimager.jpg";
+// import {BASE_URL} from "./helper"
 import { UserContext } from "../App";
 import { useContext } from "react";
 const Login = () => {
@@ -12,7 +15,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const loginUser = async (e) => {
     e.preventDefault();
-    const res = await fetch(`${BASE_URL}/signin`, {
+    const res = await fetch(`/signin`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -29,12 +32,31 @@ const Login = () => {
     } else if (data.adminname === "Samyak") {
       localStorage.setItem("adminname", data.adminname);
       dispatch({ type: "USER", payload: true });
-      navigate("/admin");
+      toast.success("Login Successful!!", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      navigate("/adminlanding");
     } else {
       localStorage.setItem("adminname", data.adminname);
       dispatch({ type: "USER", payload: true });
-      window.alert("Login Successful");
       navigate("/home");
+      toast.success("Login Successful!!", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     }
   };
   return (
@@ -49,6 +71,10 @@ const Login = () => {
                   <figure>
                     <img src={darkhorse} alt="Company-logo" />
                   </figure>
+                </div>
+                <div className="titles">
+                  <p className="already--registered">Already registered with Darkhorsestocks?</p>
+                  <p className="login-same">Login with same information</p>
                 </div>
                 <div className="input-form">
                   <div className="form-group">
@@ -92,13 +118,20 @@ const Login = () => {
                   />
                 </div>
                 <NavLink to="/signup" className="signin-image-link">
-                  Create Account
+                  New Here? <span>Create Account</span> 
                 </NavLink>
               </form>
             </div>
           </div>
         </div>
+        <div className="background-right">
+        <img src={bgimage} alt="background-right"/>
+      </div>
+      <div className="background-left">
+        <img src={bgimager} alt="background-right"/>
+      </div>
       </section>
+      
     </div>
   );
 };

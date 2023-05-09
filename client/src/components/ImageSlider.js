@@ -105,7 +105,7 @@ const TextOverlay = styled.div`
   flex-direction: column; /* Update to display texts in a column */
   z-index: 2;
   /* Set z-index higher than image to overlay on top */
-  background-color: rgba(0, 0, 0, 0.5); /* Set background color to black with 50% opacity */
+  background-color: rgba(0, 0, 0, 0.3); /* Set background color to black with 50% opacity */
 `;
 
 const Text = styled.p`

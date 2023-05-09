@@ -6,7 +6,7 @@ require("../db/conn");
 const User = require("../models/userModel");
 const authenticate = require("../middleware/authenticate")
 const cookieParser = require("cookie-parser");
-const BASE_URL = process.env.BASE_URL
+// const BASE_URL = process.env.BASE_URL
 router.use(cookieParser());
 let adminname = "";
 router.get("/user", async (req, res) => {
@@ -24,7 +24,7 @@ router.post("/register", async (req, res) => {
     return res.status(422).json({ error: "Please fill all the fields" });
   }
   try {
-    const userExist = await User.findOne({ email: email });
+    const userExist = await User.findOne({  email });
     if (userExist) {
       return res.status(422).json({ error: "Email already exists" });
     } else if (password != cpassword) {
@@ -38,10 +38,11 @@ router.post("/register", async (req, res) => {
       }
     }
   } catch (e) {
+    console.error(e);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
-router.post(`${BASE_URL}/signin`, async (req, res) => {
+router.post(`/signin`, async (req, res) => {
   try {
     let token;
     const { email, password } = req.body;
@@ -93,6 +94,15 @@ router.get("/Subscription", authenticate, async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(400).send(error.message || "Something went wrong!");
+  }
+});
+//Get Count
+router.get("/user/count", async (req, res) => {
+  try {
+    const count = await User.countDocuments();
+    res.send({ count });
+  } catch (e) {
+    res.send(e);
   }
 });
 //Logout

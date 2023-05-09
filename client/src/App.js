@@ -1,5 +1,7 @@
 import './App.css';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Home from './pages/Home';
 import Blogs from './pages/Blogs'
 import MainHeader from "./MainHeader"
@@ -21,14 +23,28 @@ import FAQPage from './components/FAQ';
 import  Admin  from './pages/Admin';
 import Adminblogs from './components/Adminblogs';
 import UpdateBlog from './components/UpdateBlog';
+import AdminLanding from './pages/AdminLanding';
 export const UserContext = createContext();
 const Routing = ()=>{
   return(
     <BrowserRouter>
+    <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
       <Routes>
         <Route path="/" element={<MainHeader/>}>
           <Route index  element={<Login/>}/>
           <Route path="/admin" element={<Admin/>}/>
+          <Route path="/adminlanding" element={<AdminLanding/>}/>
           <Route path="/admin/blogs" element={<Adminblogs/>}/>
           <Route path="/admin/update/blog/:id" element={<UpdateBlog/>}/>
           <Route path="/blogs" element={<Blogs/>}/>

@@ -10,7 +10,6 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    phone:{
         phone: {
             type: Number,
             required: true,
@@ -20,7 +19,6 @@ const userSchema = new mongoose.Schema({
                 },
                 message: props => `${props.value} is not a valid phone number! Phone number must be exactly 10 digits.`
             }
-        },
     },
     password:{
         type:String,
@@ -51,7 +49,7 @@ userSchema.methods.generateAuthToken = async function(){
         await this.save();
         return token;
     }catch(e){
-        console.log(e)
+        // console.log(e)
     }
 }
 const User = mongoose.model('USER',userSchema)

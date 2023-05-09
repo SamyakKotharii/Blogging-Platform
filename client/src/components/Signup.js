@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import darkhorse from "../images/darkhorse-logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
+import {toast} from "react-toastify"
+import bgimage from "../images/bgimage.png"
+import bgimager from "../images/bgimager.jpg"
 const Signup = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({
@@ -37,10 +40,29 @@ const Signup = () => {
       }),
     });
     const data = await res.json();
+    console.log(data);
     if (data.status === 422 || !data) {
-      window.alert("Invalid Registration");
+      toast.error("Registration Failed!!", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     } else {
-      window.alert("Registration Successful");
+      toast.success("Registration Successful!!", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
       navigate("/");
     }
   };
@@ -143,12 +165,18 @@ const Signup = () => {
                   <img src={darkhorse} alt="Company-logo" />
                 </figure>
                 <NavLink to="/" className="signup-image-link">
-                  I am already registered
+                  I am already registered. <span>Log In</span> 
                 </NavLink>
               </div>
             </div>
           </div>
         </div>
+        <div className="background-right">
+        <img src={bgimage} alt="background-right"/>
+      </div>
+      <div className="background-left">
+        <img src={bgimager} alt="background-right"/>
+      </div>
       </section>
     </div>
   );

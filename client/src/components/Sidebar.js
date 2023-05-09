@@ -22,6 +22,7 @@ const Sidebar = () => {
         boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
       }}
     >
+      <NavLink to="/adminlanding">
       <div className="logo--admin">
         <img
           src={darkhorse}
@@ -31,7 +32,9 @@ const Sidebar = () => {
           className="company-logo"
         />
         <h5 className="admin--title" style={{ fontSize: "1.1rem" }}>Darkhorsestocks</h5>
+        
       </div>
+      </NavLink>
       <hr style={{ height: "1px", backgroundColor: "gray", border: "none", margin: "5px 10px", width:"175px" }} />
       <ul
         className="admin-bar"
@@ -95,9 +98,9 @@ const Sidebar = () => {
         </li>
       </ul>
       <hr style={{ height: "0.5px", backgroundColor: "gray", border: "none", marginTop:"310px", width:"175px" }} />
-      <button className="btn btn--admin btn-primary " onClick={handleLogout}>
+      <button className="btn btn--admin btn-primary btn-logout-admin" onClick={handleLogout}>
         <svg
-          className="logout--button me-2 mr-5 mb-1"
+          className="logout--button me-2 mr-15"
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"
@@ -114,7 +117,7 @@ const Sidebar = () => {
             d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
           />
         </svg>
-        Logout
+        <span className="admin--span--lo">Logout</span>
       </button>
     </div>
   );

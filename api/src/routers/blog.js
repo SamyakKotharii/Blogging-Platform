@@ -20,6 +20,16 @@ router.get("/blog", async (req, res) => {
     res.send(e);
   }
 });
+//Get Count
+router.get("/blog/count", async (req, res) => {
+  try {
+    const count = await Blog.countDocuments();
+    res.send({ count });
+  } catch (e) {
+    res.send(e);
+  }
+});
+
 //Get categories
 router.get("/categories", async (req, res) => {
   try {
