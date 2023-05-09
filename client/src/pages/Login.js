@@ -15,7 +15,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const loginUser = async (e) => {
     e.preventDefault();
-    const res = await fetch(`/signin`, {
+    const res = await fetch(`https://darkhorsestocks.onrender.com/signin`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",

@@ -6,7 +6,7 @@ const Explore = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:4000/blog");
+      const response = await fetch("https://darkhorsestocks.onrender.com/blog");
       const data = await response.json();
       // Get unique random indexes
       const uniqueRandomIndexes = [];

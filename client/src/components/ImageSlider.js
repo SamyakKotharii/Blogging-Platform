@@ -12,7 +12,7 @@ const ImgSlider = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/blog/latest")
+      .get("https://darkhorsestocks.onrender.com/blog/latest")
       .then((response) => setImages(response.data))
       .catch((error) => console.error(error));
   }, []);

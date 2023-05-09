@@ -26,7 +26,7 @@ const Signup = () => {
       window.alert("Please enter a valid phone number");
       return;
     }
-    const res = await fetch("/register", {
+    const res = await fetch("https://darkhorsestocks.onrender.com/register", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

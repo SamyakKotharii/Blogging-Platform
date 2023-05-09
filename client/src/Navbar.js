@@ -1,9 +1,32 @@
 import React,{useContext} from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { UserContext } from "./App";
 const Navbar = () => {
   const {state,dispatch} =   useContext(UserContext);
+  const navigate = useNavigate();
   console.log(dispatch);
+  const handleLogout = () => {
+      fetch('logout',{
+          method:"GET",
+          headers:{
+              Accept:"application/json",
+              "Content-type":"application/json"
+            },
+            credentials:"include"
+      }).then((res)=>{
+        dispatch({type:"USER",payload:false})
+          navigate("/",{replace:true});
+          if(!res.status===200){
+              const error  = new Error(res.error);
+              throw error
+            }
+      }).catch((e)=>{
+          console.log(e)
+      })
+    ;
+  };
+  
+
   const RenderMenu=()=>{
     if(state){
       return(
@@ -63,7 +86,7 @@ const Navbar = () => {
             className="nav--list"
             to="/logout"
             style={{ textDecoration: "none" }}
-            // onClick={handleAboutUsClick}
+            onClick={handleLogout}
           >
             Logout
           </NavLink>

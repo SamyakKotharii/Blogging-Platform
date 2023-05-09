@@ -18,7 +18,7 @@ const UpdateBlog = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await fetch(`/admin/blog/${id}`)
+        const response = await fetch(`https://darkhorsestocks.onrender.com/admin/blog/${id}`)
         const data = await response.json();
         setBlog(data);
         setFormData({
@@ -41,7 +41,7 @@ const UpdateBlog = () => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await fetch(`/admin/update/blog/${id}`, {
+      const response = await fetch(`https://darkhorsestocks.onrender.com/admin/update/blog/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

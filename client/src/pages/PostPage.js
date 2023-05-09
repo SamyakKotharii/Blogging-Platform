@@ -9,7 +9,7 @@ export default function PostPage() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(`http://localhost:4000/blog/${id}`);
+        const response = await fetch(`https://darkhorsestocks.onrender.com/blog/${id}`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }

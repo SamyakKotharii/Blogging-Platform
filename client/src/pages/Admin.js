@@ -52,7 +52,7 @@ const Admin = () => {
       .filter((str) => str !== "")
       .map((str) => str.trim());
     axios
-      .post("/admin/blog-post", {
+      .post("https://darkhorsestocks.onrender.com/admin/blog-post", {
         title,
         desc,
         url,

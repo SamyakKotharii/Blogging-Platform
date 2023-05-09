@@ -19,7 +19,7 @@ export default function Blogs() {
   useEffect(() => {
     const getAllCategory = async () => {
       try {
-        const { data } = await axios.get("http://localhost:4000/categories");
+        const { data } = await axios.get("https://darkhorsestocks.onrender.com/categories");
         // console.log("data", data);
         setCategories(data);
       } catch (e) {
@@ -32,8 +32,8 @@ export default function Blogs() {
 
   const getData = useCallback(() => {
     const apiUrl = searchKey
-      ? `http://localhost:4000/search/${searchKey.toLowerCase()}`
-      : "http://localhost:4000/blog";
+      ? `https://darkhorsestocks.onrender.com/search/${searchKey.toLowerCase()}`
+      : "https://darkhorsestocks.onrender.com/blog";
 
     const requestOptions = {
       method: "GET",
@@ -54,7 +54,7 @@ export default function Blogs() {
   }, [searchKey]);
   const filterProduct = useCallback(async () => {
     try {
-      const { data } = await axios.post("http://localhost:4000/blog-filter", {
+      const { data } = await axios.post("https://darkhorsestocks.onrender.com/blog-filter", {
         checked,
       });
       setBlogs(data?.blogs);

@@ -8,11 +8,11 @@ const AdminLanding = () => {
   useEffect(() => {
     const fetchCounts = async () => {
       try {
-        const blogResponse = await fetch("/blog/count");
+        const blogResponse = await fetch("https://darkhorsestocks.onrender.com/blog/count");
         const blogData = await blogResponse.json();
         setBlogCount(blogData.count);
 
-        const userResponse = await fetch("/user/count");
+        const userResponse = await fetch("https://darkhorsestocks.onrender.com/user/count");
         const userData = await userResponse.json();
         setUserCount(userData.count);
       } catch (error) {

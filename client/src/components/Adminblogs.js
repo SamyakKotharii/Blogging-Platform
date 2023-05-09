@@ -6,7 +6,7 @@ const Adminblogs = () => {
 
   useEffect(() => {
     const fetchBlogs = async () => {
-      const res = await fetch("http://localhost:4000/admin/blogs");
+      const res = await fetch("https://darkhorsestocks.onrender.com/admin/blogs");
       const data = await res.json();
       setBlogs(data);
     };
@@ -15,7 +15,7 @@ const Adminblogs = () => {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`http://localhost:4000/admin/blog/${id}`, {
+      const res = await fetch(`https://darkhorsestocks.onrender.com/admin/blog/${id}`, {
         method: "DELETE",
       });
       if (res.status === 200) {
